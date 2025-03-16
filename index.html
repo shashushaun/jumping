@@ -375,14 +375,14 @@
 
             const gaugeWidth = parseFloat(getComputedStyle(gauge).width);
             const containerWidth = gauge.parentElement.offsetWidth;
-            const timingScore = Math.min(100, Math.floor((gaugeWidth / containerWidth) * 100));
+            const timingScore = Math.min(101, Math.floor((gaugeWidth / containerWidth) * 101));
             score = timingScore;
             scoreDisplay.textContent = `スコア: ${score}`;
             const jumpHeight = timingScore * 3;
             character.style.transform = `translate(-50%, -${jumpHeight}px)`;
 
             let messageText;
-            if (score >= 99 && score < 100) {
+            if (score >= 99 && score <= 100) {
                 messageText = 'おめでとう！<br>しょーんもな𖤐';
             } else if (score >= 95 && score < 99) {
                 messageText = '惜しい！やり直し！';
